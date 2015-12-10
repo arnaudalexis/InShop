@@ -1,0 +1,72 @@
+[
+  {
+    "ID": 0,
+    "LIEU":"Bir-Harkeim - Metro 6",
+    "PROXIMITE_1":"Exposition : Granche Arche",
+    "PROXIMITE_2":"Cinéma : Le Central",
+    "PROXIMITE_3":"Spectacle : Theatre Nanterre-Amandiers"
+  },
+  {
+    "ID": 1,
+    "LIEU":"Champs de Mars - RER C",
+    "PROXIMITE_1":"Exposition : Tour Eiffel",
+    "PROXIMITE_2":"Restaurant : Le Beaujolais",
+    "PROXIMITE_3":"Ecole : Jeannine Manuel"
+  },
+  {
+    "ID": 2,
+    "LIEU":"Pont Marie - Metro 7",
+    "PROXIMITE_1":"Concert : Sunset Sunside",
+    "PROXIMITE_2":"Bar : Peniche Marcounet",
+    "PROXIMITE_3":"Cinéma : Coolness"
+  },
+  {
+    "ID": 3,
+    "LIEU":"Ivry-sur-Seine - RER C",
+    "PROXIMITE_1":"Cinéma : Pathe Quai Ivry",
+    "PROXIMITE_2":"Concert : Le Luxy",
+    "PROXIMITE_3":"Ecole : ETNA"
+  },
+  {
+    "ID": 4,
+    "LIEU":"Porte de Versailles - Metro 12",
+    "PROXIMITE_1":"Exposition : Paris Expo",
+    "PROXIMITE_2":"Restaurant : Sushiken",
+    "PROXIMITE_3":"Ecole : Université Paris Descartes"
+  },
+  {
+    "ID": 5,
+    "LIEU":"La Plaine - Stade de France - RER B",
+    "PROXIMITE_1":"Exposition : Stade de France",
+    "PROXIMITE_2":"Restaurant : Zack",
+    "PROXIMITE_3":"Bar : Yummy"
+  },
+  {
+    "ID": 6,
+    "LIEU":"Bercy - Metro 14",
+    "PROXIMITE_1":"Concert : Bercy",
+    "PROXIMITE_2":"Exposition : Stade AccorHotels Arena",
+    "PROXIMITE_3":"Bar : Bistrot du Metro"
+  },
+  {
+    "ID": 7,
+    "LIEU":"Luxembourg - RER B",
+    "PROXIMITE_1":"Ecole : ASSAS",
+    "PROXIMITE_2":"Restaurant : Wokbar",
+    "PROXIMITE_3":"Exposition : Musée Zadkine"
+  },
+  {
+    "ID": 8,
+    "LIEU":"Chatelet - Les Halles - RER A RER B",
+    "PROXIMITE_1":"Restaurant : Pirouette",
+    "PROXIMITE_2":"Exposition : Eglise Saint Leu",
+    "PROXIMITE_3":"Concert : Duc des Lombards"
+  },
+  {
+    "ID": 9,
+    "LIEU":"Arcueil - Cachan - RER B",
+    "PROXIMITE_1":"Sport : Forest Hill",
+    "PROXIMITE_2":"Restaurant : Tokyo Yaki",
+    "PROXIMITE_3":"Concert : Espace Jean Vilar"
+  }
+]
