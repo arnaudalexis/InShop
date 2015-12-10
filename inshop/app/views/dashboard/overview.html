@@ -1,0 +1,24 @@
+<div>
+	<h2>Shop Manager <small>Beta version</small></h2>
+	<div class="jumbotron">
+		<div class="container" ng-controller="MainController">
+			<h2 align="center">Here you can select all the products you need to your website / blog</h2>
+			<br><br><br><br>
+
+	        <div ng-repeat="product in products" class="col-md-4">
+	  				<div class="thumbnail">
+	    				<img ng-src="{{ product.cover }}">
+	    				<p class="title">{{ product.name }}</p>
+					    <p class="price">{{ product.price | currency }}</p>
+					    <p class="marque">Marque : {{ product.marque }}</p>
+							<p class="categorie" style="font-size: 14px;">{{ product.categorie }}</p>
+					    <div class="rating">
+					    	<p class="likes" ng-click="plusOne($index)">+ {{ product.likes }} </p>
+					    	<!--<p class="dislikes" ng-click="minusOne($index)">- {{ product.dislikes }} </p>-->
+					    </div>
+	  				</div>
+					</div>
+
+		</div>
+	</div>
+</div>
