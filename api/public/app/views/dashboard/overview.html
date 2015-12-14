@@ -1,0 +1,26 @@
+<div>
+	<h2>Shop Manager <small>Beta version</small></h2>
+	<div class="jumbotron" ng-controller="MainController">
+		<div class="container">
+			<h2 align="center">Here you can select all the products you need to your website / blog</h2>
+			<br><br><br><br>
+
+	        <div ng-repeat="product in products" class="col-md-4">
+	  				<div class="thumbnail">
+	    				<img ng-class="{selected: toggles[$index] == '-'}" ng-src="{{ product.url }}" onError="this.onerror=null;this.src='/images/error.jpg';" />
+	    				<p class="title">{{ product.nom }}</p>
+					    <p class="price">{{ product.prix }}</p>
+					    <p class="marque">Marque : {{ product.marque }}</p>
+							<p class="categorie" style="font-size: 14px;">{{ product.cat }}</p>
+					    <div class="rating">
+					    	<p ng-class="{remove: toggles[$index] == '-', add: toggles[$index] == '+'}" ng-click="add($index)" onclick="(this.innerText == '+' ? this.innerText = '-' : this.innerText = '+')">{{ toggles[$index] }}</p>
+					    	<!--<p class="dislikes" ng-click="minusOne($index)">- {{ product.dislikes }} </p>-->
+					    </div>
+	  				</div>
+					</div>
+		</div>
+		<div>
+			<p ng-click="valid(products)" class="submit">SUBMIT</p>
+		</div>
+	</div>
+</div>

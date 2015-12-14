@@ -4,46 +4,46 @@ var fs = require("fs");
 var bodyParser = require('body-parser');
 
 var server = app.listen(8081, function () {
-
-  var XLSX = require('xlsx');
-  var workbook = XLSX.readFile('xlsx/Barlenn_Sandwichclasscamp.xlsx');
-  var sheet_name_list = workbook.SheetNames;
-  sheet_name_list.forEach(function(y) {
-      var worksheet = workbook.Sheets[y];
-      var headers = {};
-      var data = [];
-      for(z in worksheet) {
-          if(z[0] === '!') continue;
-          //parse out the column, row, and value
-          var col = z.substring(0,1);
-          var row = parseInt(z.substring(1));
-          var value = worksheet[z].v;
-
-          //store header names
-          if(row == 1) {
-              headers[col] = value;
-              continue;
-          }
-
-          if(!data[row]) data[row]={};
-          data[row][headers[col]] = value;
-      }
-      //drop those first two rows which are empty
-      data.shift();
-      data.shift();
-
-      //console.log(data);
-      data = JSON.stringify(data);
-      //var data2 = console.log(data);
-      fs.writeFile('json/products.json', data, function(err) {
-  	    if(err) {
-  	        return console.log(err);
-  	    }
-
-  	    console.log("The file was saved!");
-  	});
-
-  });
+  //
+  // var XLSX = require('xlsx');
+  // var workbook = XLSX.readFile('xlsx/Barlenn_Sandwichclasscamp.xlsx');
+  // var sheet_name_list = workbook.SheetNames;
+  // sheet_name_list.forEach(function(y) {
+  //     var worksheet = workbook.Sheets[y];
+  //     var headers = {};
+  //     var data = [];
+  //     for(z in worksheet) {
+  //         if(z[0] === '!') continue;
+  //         //parse out the column, row, and value
+  //         var col = z.substring(0,1);
+  //         var row = parseInt(z.substring(1));
+  //         var value = worksheet[z].v;
+  //
+  //         //store header names
+  //         if(row == 1) {
+  //             headers[col] = value;
+  //             continue;
+  //         }
+  //
+  //         if(!data[row]) data[row]={};
+  //         data[row][headers[col]] = value;
+  //     }
+  //     //drop those first two rows which are empty
+  //     data.shift();
+  //     data.shift();
+  //
+  //     //console.log(data);
+  //     data = JSON.stringify(data);
+  //     //var data2 = console.log(data);
+  //     fs.writeFile('json/products.json', data, function(err) {
+  // 	    if(err) {
+  // 	        return console.log(err);
+  // 	    }
+  //
+  // 	    console.log("The file was saved!");
+  // 	});
+  //
+  // });
 
 
   var host = server.address().address
@@ -56,7 +56,7 @@ var server = app.listen(8081, function () {
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
-app.use('/', express.static(__dirname + '/public'));
+app.use('/', express.static(__dirname + '/public/app'));
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -72,15 +72,9 @@ app.get('/listProducts', function (req, res, next) {
 })
 
 
-app.post('saveProducts', function (req, res, next) {
+app.post('/postProducts', function (req, res, next) {
    // First read existing users.
-   fs.readFile( "json/products.json", 'utf8', function (err, data) {
-       products = JSON.parse( data );
-       fs.writeFile('json/products.json', data, function(err) {
-         if(err) {
-             return console.log(err);
-         }
-         res.end( JSON.stringify(products));
-       })
-   });
+   console.log(req.body);
+		fs.writeFileSync( "json/products.json", JSON.stringify(req.body));
+    res.end(JSON.stringify(req.body) );
 })
